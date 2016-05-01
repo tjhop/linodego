@@ -44,16 +44,17 @@ type Client struct {
 	UsePost bool
 
 	// Services
-	Test    *TestService
-	Api     *ApiService
-	Avail   *AvailService
-	Account *AccountService
-	Image   *ImageService
-	Linode  *LinodeService
-	Job     *LinodeJobService
-	Config  *LinodeConfigService
-	Ip      *LinodeIPService
-	Disk    *LinodeDiskService
+	Test        *TestService
+	Api         *ApiService
+	Avail       *AvailService
+	Account     *AccountService
+	Image       *ImageService
+	Linode      *LinodeService
+	Job         *LinodeJobService
+	Config      *LinodeConfigService
+	Ip          *LinodeIPService
+	Disk        *LinodeDiskService
+	StackScript *StackScriptService
 }
 
 // Creates a new Linode client object.
@@ -79,6 +80,7 @@ func NewClient(AccessKey string, httpClient *http.Client) *Client {
 	c.Ip = &LinodeIPService{client: c}
 	c.Job = &LinodeJobService{client: c}
 	c.Disk = &LinodeDiskService{client: c}
+	c.StackScript = &StackScriptService{client: c}
 	return c
 }
 

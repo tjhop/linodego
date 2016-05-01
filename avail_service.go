@@ -54,7 +54,7 @@ func (t *AvailService) DataCenters() (*AvailDataCentersResponse, error) {
 	if err := t.client.do("avail.datacenters", u, &v.Response); err != nil {
 		return nil, err
 	}
-	v.DataCenters = make([]DataCenter, 5)
+	v.DataCenters = make([]DataCenter, 0)
 	if err := json.Unmarshal(v.RawData, &v.DataCenters); err != nil {
 		return nil, err
 	}
@@ -68,7 +68,7 @@ func (t *AvailService) Distributions() (*AvailDistributionsResponse, error) {
 	if err := t.client.do("avail.distributions", u, &v.Response); err != nil {
 		return nil, err
 	}
-	v.Distributions = make([]Distribution, 5)
+	v.Distributions = make([]Distribution, 0)
 	if err := json.Unmarshal(v.RawData, &v.Distributions); err != nil {
 		return nil, err
 	}
@@ -82,7 +82,7 @@ func (t *AvailService) Kernels() (*KernelsResponse, error) {
 	if err := t.client.do("avail.kernels", u, &v.Response); err != nil {
 		return nil, err
 	}
-	v.Kernels = make([]Kernel, 5)
+	v.Kernels = make([]Kernel, 0)
 	if err := json.Unmarshal(v.RawData, &v.Kernels); err != nil {
 		return nil, err
 	}
@@ -121,7 +121,7 @@ func (t *AvailService) LinodePlans() (*LinodePlansResponse, error) {
 	if err := t.client.do("avail.linodeplans", u, &v.Response); err != nil {
 		return nil, err
 	}
-	v.LinodePlans = make([]LinodePlan, 5)
+	v.LinodePlans = make([]LinodePlan, 0)
 	if err := json.Unmarshal(v.RawData, &v.LinodePlans); err != nil {
 		return nil, err
 	}
@@ -135,7 +135,7 @@ func (t *AvailService) NodeBalancers() (*NodeBalancersResponse, error) {
 	if err := t.client.do("avail.nodebalancers", u, &v.Response); err != nil {
 		return nil, err
 	}
-	v.NodeBalancers = make([]NodeBalancer, 5)
+	v.NodeBalancers = make([]NodeBalancer, 0)
 	if err := json.Unmarshal(v.RawData, &v.NodeBalancers); err != nil {
 		return nil, err
 	}
@@ -149,7 +149,7 @@ func (t *AvailService) StackScripts() (*StackScriptsResponse, error) {
 	if err := t.client.do("avail.stackscripts", u, &v.Response); err != nil {
 		return nil, err
 	}
-	v.StackScripts = make([]StackScript, 5)
+	v.StackScripts = make([]StackScript, 0)
 	if err := json.Unmarshal(v.RawData, &v.StackScripts); err != nil {
 		return nil, err
 	}

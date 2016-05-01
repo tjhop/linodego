@@ -57,19 +57,23 @@ type NodeBalancer struct {
 }
 
 type StackScript struct {
-	//Script string `json:"SCRIPT"`
-	//Description string `json:"DESCRIPTION"`
-	//DistributionidList int `json:"DISTRIBUTIONIDLIST"`
-	Label             CustomString `json:"LABEL"`
-	DeploymentsTotal  int          `json:"DEPLOYMENTSTOTAL"`
-	LatestRev         int          `json:"LATESTREV"`
-	CreatedDt         CustomTime   `json:"CREATE_DT"`
-	DeploymentsActive int          `json:"DEPLOYMENTSACTIVE"`
-	StackScriptId     int          `json:"STACKSCRIPTID"`
-	RevNote           int          `json:"REV_NOTE"`
-	RevDt             int          `json:"REV_DT"`
-	IsPublic          int          `json:"ISPUBLIC"`
-	UserId            int          `json:"USERID"`
+	Script             string       `json:"SCRIPT"`
+	Description        CustomString `json:"DESCRIPTION"`
+	DistributionidList CustomString `json:"DISTRIBUTIONIDLIST"`
+	Label              CustomString `json:"LABEL"`
+	DeploymentsTotal   int          `json:"DEPLOYMENTSTOTAL"`
+	LatestRev          int          `json:"LATESTREV"`
+	CreatedDt          CustomTime   `json:"CREATE_DT"`
+	DeploymentsActive  int          `json:"DEPLOYMENTSACTIVE"`
+	StackScriptId      int          `json:"STACKSCRIPTID"`
+	RevNote            CustomString `json:"REV_NOTE"`
+	RevDt              CustomTime   `json:"REV_DT"`
+	IsPublic           int          `json:"ISPUBLIC"`
+	UserId             int          `json:"USERID"`
+}
+
+type StackScriptId struct {
+	StackScriptId int `json:"StackScriptID"`
 }
 
 type EstimateInvoice struct {
