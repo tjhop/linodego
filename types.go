@@ -33,6 +33,7 @@ type Distribution struct {
 
 type Kernel struct {
 	Label    CustomString `json:"LABEL"`
+	IsKvm    int          `json:"ISKVM"`
 	IsXen    int          `json:"ISXEN"`
 	IsPVOPS  int          `json:"ISPVOPS"`
 	KernelId int          `json:"KERNELID"`

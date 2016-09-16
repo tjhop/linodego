@@ -34,7 +34,7 @@ func TestAvailDistributions(t *testing.T) {
 func TestAvailKernels(t *testing.T) {
 	client := NewClient(APIKey, nil)
 
-	v, err := client.Avail.Kernels()
+	v, err := client.Avail.Kernels(nil)
 	if err != nil {
 		t.Fatal(err)
 	}

@@ -76,8 +76,10 @@ func (t *AvailService) Distributions() (*AvailDistributionsResponse, error) {
 }
 
 // Get Kernels
-func (t *AvailService) Kernels() (*KernelsResponse, error) {
+func (t *AvailService) Kernels(args map[string]string) (*KernelsResponse, error) {
 	u := &url.Values{}
+	// add optional parameters
+	processOptionalArgs(args, u)
 	v := KernelsResponse{}
 	if err := t.client.do("avail.kernels", u, &v.Response); err != nil {
 		return nil, err
