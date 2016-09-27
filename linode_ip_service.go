@@ -88,9 +88,9 @@ func (t *LinodeIPService) AddPublic(linodeId int) (*LinodeIPAddressResponse, err
 }
 
 // Set RDNS
-func (t *LinodeIPService) SetRDNS(linodeId int, hostname string) (*LinodeRDNSIPAddressResponse, error) {
+func (t *LinodeIPService) SetRDNS(ipAddressId int, hostname string) (*LinodeRDNSIPAddressResponse, error) {
 	u := &url.Values{}
-	u.Add("LinodeID", strconv.Itoa(linodeId))
+	u.Add("IPAddressID", strconv.Itoa(ipAddressId))
 	u.Add("Hostname", hostname)
 	v := LinodeRDNSIPAddressResponse{}
 	if err := t.client.do("linode.ip.setrdns", u, &v.Response); err != nil {
